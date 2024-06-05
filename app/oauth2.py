@@ -14,11 +14,11 @@ ALGORITHM = settings.algorithm
 ACCESS_TOKEN_EXPIRE_MINUTES = settings.access_token_expire_minutes
 
 def create_access_token(payload: dict):
-    to_encode = payload.copy()
+    plain_payload = payload.copy()
 
     expire = datetime.utcnow() + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
-    to_encode.update({"exp": expire})
-    encoded_jwt = jwt.encode(claims=to_encode, key=SECRET_KEY, algorithm=ALGORITHM)
+    plain_payload.update({"exp": expire})
+    encoded_jwt = jwt.encode(claims=plain_payload, key=SECRET_KEY, algorithm=ALGORITHM)
 
     return encoded_jwt
 

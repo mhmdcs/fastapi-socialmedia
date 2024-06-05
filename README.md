@@ -1,10 +1,10 @@
-## Starting out
+## Starting out!
 Make sure you have Python3 installed on your system.
 All the following commands must be executed inside our project's root directory.
 
 Run `python3 -m venv venv` to create the project's virtual environment.
 
-In case VS Code still isn't using our virtual envrionment's Python interpreter, open VSCode's command palette (`cmd+shift+p` on macOS) and select "Enter interpreter path" and input the path manually like so `./venv/bin/python`.
+In case VS Code still isn't using our virtual envrionment's Python interpreter, open VSCode's command palette (`cmd+shift+p` on macOS) and select "Select Python Interpreter" then "Enter interpreter path" and input the path manually like so `./venv/bin/python`.
 
 Run bash script `source venv/bin/activate` so that when you use `pip install` to install new Python packages it only installs in our project's virtual environment, and not the global environemnt on our machine.
 
@@ -18,6 +18,7 @@ Once you activate the project's virtual environment, youl'll need to `pip instal
 `pip install 'passlib[bcrypt]'`
 `pip install 'python-jose[cryptography]'`
 `pip install pydantic-settings`
+`pip install alembic`
 
 Run `pip freeeze` to check that all the aforementioned packages were installed.
 
@@ -37,3 +38,7 @@ Set `localhost:5432` as your envrionment variable via running `export FASTAPI-SO
 
 ## Not required but recommended:
 Download and install Postman to test the backend's endpoints, you can also test with `curl`, or use http://localhost:port/docs or http://localhost:port/redoc that FastAPI already provides.
+
+## Last but not least..
+
+Run `uvicorn app.main:app --reload` to see the magic in action :)
