@@ -28,7 +28,7 @@ Once you activate the project's virtual environment, youl'll need to `pip instal
 
 Run `pip freeze` to check that all the aforementioned packages were installed.
 
-Download and install PostgreSQL, host a database on localhost and connect to it by providing its credentials in the project.
+Download and install PostgreSQL, host a database on localhost and connect to it by providing its credentials in the project (create an `env` file at the project's root directoy).
 
 ```
 DATABASE_HOSTNAME=localhost // database host name
