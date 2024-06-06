@@ -8,7 +8,7 @@ from .routers import user, post, auth, vote
 
 app = FastAPI()
 
-# in API frameworks, middleware is basically a function that runs before every request, so if someone sends a request to our app server, it'll first go through this middleware and THEN it'll be forwarded/routed to our routes
+#In API frameworks, middleware is basically a function that runs before every request, so if someone sends a request to our app server, it'll first go through this middleware and THEN it'll be forwarded/routed to our routes
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
