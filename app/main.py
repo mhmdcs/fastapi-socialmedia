@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from . import models
 from .database import engine
 from .routers import user, post, auth, vote
@@ -6,6 +7,15 @@ from .routers import user, post, auth, vote
 # models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
+
+# in API frameworks, middleware is basically a function that runs before every request, so if someone sends a request to our app server, it'll first go through this middleware and THEN it'll be forwarded/routed to our routes
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app.include_router(post.router)
 app.include_router(user.router)
