@@ -31,14 +31,8 @@ Run `pip freeze` to check that all the aforementioned packages were installed.
 Download and install PostgreSQL, host a database on localhost and connect to it by providing its credentials in the project (create an `env` file at the project's root directoy).
 
 ```
-DATABASE_HOSTNAME=localhost // database host name
-DATABASE_PORT=5432 // database host port
-DATABASE_PASSWORD=password // database host port
-DATABASE_NAME=fastapi-todo // database name
-DATABASE_USERNAME=postgres // database password
+DATABASE_CONNECTION_STRING=postgresql://postgres:password@localhost:port/database-name
 SECRET_KEY=any random number  // run `openssl rand -hex 32` to generate a long random key for jwt signing
-ALGORITHM=HS256 // we'll use HMAC SHA256
-ACCESS_TOKEN_EXPIRE_MINUTES=30 // set jwt acccess token lifetime to 30 mins
 ```
 
 Set `localhost:5432` as your envrionment variable via running `export FASTAPI-SOCIALMEDIA-DB="localhost:5432"`, run `printenv` or `echo $FASTAPI-SOCIALMEDIA-DB` to check it was set.
