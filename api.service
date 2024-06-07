@@ -1,0 +1,22 @@
+# you'll create this file so that you create a service that starts our backend server in the background, similar to the system services in /etc/systemd/system
+
+# you'll create this file inside `/etc/systemd/system` and name it `api.service` so that you can run it with the command `systemctl start api` or `systemctl start api.service` then check its status with `systemctl status api`
+
+# don't forget to also run `sudo systemctl enable api` to ensure that your service will always auto-start upon operating system starting in case it gets rebooted etc
+
+[Unit]
+Description=gunicorn instance to backend server api
+#this tells ubuntu systemd that our service depends on network service running before we start our api server, because if the network isn't up then our server is worthless, so we tell it to wait until the network service is running until it runs our gunicorn service
+After=network.target
+
+[Service]
+User=mhmd
+Group=mhmd
+WorkingDirectory=/home/mhmd/app/src/
+Environment="PATH=/home/mhmd/app/venv/bin"
+EnvironmentFile=/home/mhmd/.env
+ExecStart=/home/mhmd/app/venv/bin/gunicorn -w 4 -k uvicorn.workers.UvicornWorker app.main:app --bind 0.0.0.0:8000
+
+[Install]
+WantedBy=multi-user.target
+
