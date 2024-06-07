@@ -26,6 +26,8 @@ Once you activate the project's virtual environment, youl'll need to `pip instal
 
 `pip install alembic`
 
+`pip install gunicorn`
+
 Run `pip freeze` to check that all the aforementioned packages were installed.
 
 Or, simply just run `pip install -r requirements.txt` and it'll install all the needed packages for you.
