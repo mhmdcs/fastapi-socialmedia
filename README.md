@@ -48,4 +48,4 @@ Download and install Postman to test the backend's endpoints, you can also test 
 
 ## Last but not least..
 
-Run `uvicorn app.main:app --reload` in dev or `gunicorn -w 4 -k uvicorn.workers.UvicornWorker app.main:app --bind 0.0.0.0:8000` in prod if you want to use a proccess-manager tool like gunicorn.
+Run `uvicorn app.main:app --reload` in dev or `gunicorn -w 4 -k uvicorn.workers.UvicornWorker app.main:app --bind 0.0.0.0:port` in prod if you want to use a proccess-manager tool like gunicorn.
