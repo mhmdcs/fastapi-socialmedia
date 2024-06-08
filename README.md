@@ -30,6 +30,8 @@ Once you activate the project's virtual environment, youl'll need to `pip instal
 
 `pip install uvloop`
 
+`pip install pytest`
+
 Run `pip freeze` to check that all the aforementioned packages were installed.
 
 Or, simply just run `pip install -r requirements.txt` and it'll install all the needed packages for you.
@@ -45,6 +47,9 @@ Set `localhost:5432` as your envrionment variable via running `export FASTAPI-SO
 
 ## Not required but recommended:
 Download and install Postman to test the backend's endpoints, you can also test with `curl`, or use http://localhost:port/docs or http://localhost:port/redoc that FastAPI already provides.
+
+# Optional: Run the tests
+If you have installed `pytest`, which you should if you installed the required dependencies/modules/packages via `pip install -r requirements.txt`, then you can run all the tests written in the `tests` directory via running `pytest --disable-warnings -vx`.
 
 ## Last but not least..
 
