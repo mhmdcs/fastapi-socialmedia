@@ -48,7 +48,7 @@ Set `localhost:5432` as your envrionment variable via running `export FASTAPI-SO
 ## Not required but recommended:
 Download and install Postman to test the backend's endpoints, you can also test with `curl`, or use http://localhost:port/docs or http://localhost:port/redoc that FastAPI already provides.
 
-# Optional: Run the tests
+## Optional: Run the tests
 If you have installed `pytest`, which you should if you installed the required dependencies/modules/packages via `pip install -r requirements.txt`, then you can run all the tests written in the `tests` directory via running `pytest --disable-warnings -vx` from the project's root directory.
 
 ## Last but not least..
